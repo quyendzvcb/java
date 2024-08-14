@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td{
+            border: 1px solid;
+            border-collapse: collapse;
+            height: 60px;
+        }
+         
+    </style>
+     <script>
+         function TinhTuoi(){
+             var Ten=document.getElementById("txtTen").value;
+             var Nam=parseInt(document.getElementById("txtTuoi").value);
+             var date_now = new Date();
+             if (Ten == ""){
+                 alert("Vui lòng nhập lại tên");
+                 return false;
+             }
+             if (isNaN(Nam)){
+                 alert("Vui long nhap lai tuoi");
+                 return false;
+             }
+             var tuoi=date_now.getFullYear() - Nam;
+             document.getElementById("KetQua").innerHTML= "Chào bạn " + Ten + "!<br> Tuổi của ban là: " + tuoi;
+         }
+    </script>  
+</head>
+<body>
+    <table align="center">
+        <caption align="center"><b>Chương trình tính tuổi</b></caption>
+        <tr>
+            <td>Nhập tên của bạn:</td>
+            <td><input type="text" id="txtTen" placeholder="Nhập ten của bạn"> </td>
+        </tr>
+        <tr>
+            <td>Nhập năm sinh của bạn:</td>
+            <td><input type="text" id="txtTuoi" placeholder="Nhập tuổi của bạn"></td>
+        </tr>
+        <tr>
+            <td><button type="submit"  onclick="TinhTuoi()">Kết quả</td>
+            <td><span id="KetQua"></span></td>
+        </tr>
+    </table>
+</body>
+</html>

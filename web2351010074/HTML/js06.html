@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="myForm" onsubmit="return dangki()">
+        <table align="center" border="1px" width="70%">
+            <caption><h2>ĐĂNG KÍ THÀNH VIÊN</h2></caption>
+            <tr>
+                <td>
+                    <label for="user">Tên đăng nhập</label>
+                </td>
+                <td>
+                    <input type="text" name="user" id="user" placeholder="Nhập tên" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="pass">Mật khẩu</label>
+                </td>
+                <td>
+                    <input type="password" name="pass" id="pass" placeholder="Nhập mật khẩu" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Ngày sinh
+                </td>
+                <td>
+                    <input type="date" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Giới tính</td>
+                <td>
+                    <input type="radio" id="nam" name="sex" checked>Nam
+                    <input type="radio" id="nu" name="sex">Nữ
+                </td>
+            </tr>
+            <tr>
+                <td>Vấn đề bạn quan tâm</td>
+                <td>
+                    <select name="" id="choice">
+                        <option value="kt">Kinh tế</option>
+                        <option value="tt">Thể thao</option>
+                        <option value="vh">Văn học nghệ thuật</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><button type="submit">submit</button></td>
+                <td><button type="reset">reset</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"> <textarea name="text" id="text" cols="30" rows="10"></textarea></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        var hoTen = document.forms["myForm"][user].value;
+        var gioiTinh;
+        if(document.getElementById('nam').checked)
+            gioiTinh = "Nam";
+        else
+            gioiTinh = "Nữ";
+
+        var choice;
+        if(document.getElementById("choice").value == "kt")
+            chocie = "Kinh tế";
+        else if(document.getElementById("choice").value == "tt")
+            chocie = "Thể thao";
+        else
+            chocie = "Văn học nghệ thuật";
+
+        function dangki(){
+            document.getElementById("text").innerHTML = "Chào mừng "+ hoten+"<br> Bạn là " +gioiTinh+"<br> Vấn đề bạn quan tâm là "+choice;
+        }
+        
+    </script>
+</body>
+</html>

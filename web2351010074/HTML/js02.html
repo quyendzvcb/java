@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 id="tinhNgay"></h3>
+    <h3 id="now"></h3>
+    <h3 id="time"></h3>
+    <button onclick="Tinh_date()">Show</button>
+    <script>
+        var thang = Number(prompt("Nhập tháng!"));
+        var nam = Number(prompt("Nhập năm!", 2000));
+        var ngay = Tinh_ngay(thang, nam);
+
+        function isNhuan(year){
+            return (year%400 == 0) || (year%4 == 0 && year % 100 != 0)
+        }
+
+        function Tinh_ngay(month, year){
+            switch(month){
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    return 31;
+                case 4:
+                case 6:
+                case 11:
+                case 9:
+                    return 30;
+                case 2:
+                    if(isNhuan(year))
+                        return 29;
+                    return 28;
+                default:
+                    return 0;
+            }
+        }
+      function Tinh_date(){
+            var date_now = new Date();
+            var y = date_now.getFullYear();
+            var t = date_now.getMonth() + 1;
+            var d = date_now.getDate();
+            var thu = date_now.getDay() + 1;
+            document.getElementById("now").innerHTML = "Hồ Chí Minh, " + (thu == 1 ? "Chủ nhật" : "Thứ " + thu) + " ngày " +d+"/"+t+"/"+y;
+            setInterval(showTime, 1000);
+        }
+
+        function showTime(){
+            var date_now = new Date();
+            var h = date_now.getHours();
+            var m = date_now.getMinutes();
+            var s = date_now.getSeconds();
+            document.getElementById("time").innerHTML = h + ":" + (m < 10? "0"+m:m)+":"+(s < 10? "0"+s:s);
+        }
+    
+    </script>
+</body>
+</html>

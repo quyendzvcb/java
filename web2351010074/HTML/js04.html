@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Tinh(){
+            var a = Number(document.forms["form_tinh"]["num1"].value);
+            var b = Number(document.forms["form_tinh"]["num2"].value);
+            var op = document.forms["form_tinh"]["op"].value;
+            var kq;
+            switch(op){
+                case "+": kq = a+b; break;
+                case "-": kq = a-b; break;
+                case "*": kq = a*b; break;
+                case "/":
+                     if(b != 0){
+                        kq = a/b;
+                        kq = kq.toFixed(2);
+                     } else
+                        kq = "Không thể chia cho 0";
+                    break;
+            }
+            document.forms["form_tinh"]["kq"].value = kq;
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <form action="" id="form_tinh" onsubmit="return Tinh()">
+        <table border="1px", width="50%", align="center">
+            <caption><h3>CÁC PHÉP TÍNH SỐ HỌC</h3></caption>
+            <tr>
+                <td><label for="num1">Số thứ nhất:</label></td>
+                <td><input type="text" name="num1" id="num1" ></td>
+            </tr>
+            <tr>
+                <td><label for="num2">Số thứ hai:</label></td>
+                <td><input type="text" name="num2" id="num2" ></td>
+            </tr>
+            <tr>
+                <td>Chọn phép toán</td>
+                <td>
+                   <input type="radio" value="+" name="op" checked> <label for="op">Cộng</label><br>
+                   <input type="radio" value="-" name="op"> <label for="op">Trừ</label><br>
+                   <input type="radio" value="*" name="op"> <label for="op">Nhân </label><br>
+                   <input type="radio" value="/" name="op"> <label for="op">Chia</label><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">submit</button>
+                    <button type="reset">reset</button>
+                </td>
+                <td>
+                    <input type="text" name="kq" readonly>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

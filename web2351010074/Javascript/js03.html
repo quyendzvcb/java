@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js03.js"></script>
+    <style>
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table border="1px" align="center" width="30%" height="200px">
+        <caption><h3>CHƯƠNG TRÌNH GIẢI PHƯƠNG TRÌNH BẬC 2
+            <br>ax<sup>2</sup>+bx+c=0</h3>
+        </caption>
+        <tr>
+            <td>a=</td>
+            <td><input type="text" id="a" placeholder="Nhập hệ số a"></td>
+        </tr>
+        <tr>
+            <td>b=</td>
+            <td><input type="text" id="b" placeholder="Nhập hệ số b"></td>
+        </tr>
+        <tr>
+            <td>c=</td>
+            <td><input type="text" id="c" placeholder="Nhập hệ số c"></td>
+            </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="Giai()">Kết quả</button>
+                <button onclick="Xoa()">Xóa</button>
+            </td>
+        </tr>
+    </table>
+    <p id="kq"></p>
+</body>
+</html>

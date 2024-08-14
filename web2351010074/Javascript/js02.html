@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js02.js"></script>
+</head>
+<body>
+    <h3 id="ngay"></h3>
+    <h3 id="now"></h3>
+    <h3 id="time"></h3>
+    <button onclick="Tinh_date()">Xem ngày giờ</button>
+    <script>
+        var thang= Number(prompt("Nhập tháng: "));
+        var nam = Number(prompt("Nhập năm: ", 2000));
+        var Ngay=Tinh_ngay(thang,nam);
+        document.getElementById("ngay").innerHTML="Tháng " + thang + " năm " +nam + " có " + Ngay +" ngày";
+    </script>
+</body>
+</html>
